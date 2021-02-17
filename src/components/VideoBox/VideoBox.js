@@ -61,8 +61,9 @@ function VideoBox({ listid }) {
     <Container>
       <IFrame
         src={`https://www.youtube-nocookie.com/embed/videoseries?list=${listid}`}
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></IFrame>
       <Data>
         {loading ? (
