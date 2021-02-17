@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { useState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar.js";
+import SideBar from "./components/Navbar/SideBar.js";
+import Home from "./pages/Home.js";
+import Video from "./pages/Video.js";
+import Error404 from "./pages/Error404.js";
+import VideoBox from "./components/VideoBox/VideoBox.js";
+import Subject from "./pages/Subject";
 
-function App() {
+const App = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const toggle = () => {
+    setOpen(!isOpen);
+  };
+
+  const sendQUery = (query) => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Router>
+        <SideBar isOpen={isOpen} toggle={toggle} />
+        <Navbar toggle={toggle} />
+        <Switch>
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/video/:listid" exact component={Video}></Route>
+          <Route path="/subject/:name" exact component={Subject}></Route>
+          <Route path="/404" exact component={Error404}></Route>
+        </Switch>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
