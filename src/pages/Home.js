@@ -40,37 +40,60 @@ const Submit = styled.input`
   background-color: #42aee9;
   color: #2a2e32;
 `;
+const Error = styled.p`
+  color: red;
+`;
 
-function Home(sendQuery) {
-  const [query, setQuery] = useState("");
+function Home() {
+  const [link, setLink] = useState("");
+  const [playid, setPlayid] = useState("");
   const [redirect, setRedirect] = useState(false);
+  const [isList, setList] = useState(false);
+  const [hasError, setError] = useState(false);
 
   const validateSubmit = (e) => {
     e.preventDefault();
-    if (!query) {
-      alert("stop screwing around");
-      return;
+
+    // parse link
+    try {
+      let args = link.split("?")[1].split("&");
+      let params = {};
+      for (const str of args) {
+        params[str.split("=")[0]] = str.split("=")[1];
+      }
+      if ("list" in params) {
+        setPlayid(params["list"]);
+        setList(true);
+        setRedirect(true);
+      }
+      if ("v" in params) {
+        console.log("is video");
+      }
+    } catch {
+      setError(true);
     }
-    setRedirect(true);
   };
 
   if (redirect) {
-    return <Redirect to={`/video/${query}`} />;
+    if (isList) {
+      return <Redirect to={`/video/${playid}`} />;
+    }
   } else {
     return (
       <Container>
         <Form onSubmit={validateSubmit}>
-          <Label htmlFor="queryid">Query:</Label>
+          <Label htmlFor="link">Link:</Label>
           <Text
             type="text"
-            name="query"
-            id="queryid"
-            placeholder="Enter playlist id to play"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            name="link"
+            id="linkid"
+            placeholder="Enter youtube link to play"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
           />
           <Submit type="submit" value="Load Playlist" />
         </Form>
+        <Error>{hasError ? "Link Invalid! Retry please." : ""}</Error>
       </Container>
     );
   }
