@@ -1,33 +1,15 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-
-// styles
-const Container = styled.div`
-  margin: 1em 12.5%;
-`;
-
-const IFrame = styled.iframe`
-  display: block;
-  height: 75vh;
-  width: 75vw;
-`;
-
-const Loading = styled.h1``;
-const Error = styled.h1``;
-const Data = styled.div`
-  margin: 0.5em 0;
-  padding: 0.5em;
-  background-color: #2a2e32;
-  border-radius: 1em;
-  color: #eff0f1;
-`;
-const Title = styled.h1`
-  color: #42aee9;
-  font-weight: 600;
-`;
-const Info = styled.div`
-  font-style: italic;
-`;
+import { useParams } from "react-router-dom";
+import {
+  Container,
+  IFrame,
+  Loading,
+  Error,
+  Data,
+  Title,
+  Info,
+} from "./PlaylistBoxElements";
 
 // end
 const getAPI = (listid) => {
@@ -38,7 +20,9 @@ const getAPI = (listid) => {
   );
 };
 
-function VideoBox({ listid }) {
+function PlaylistBox() {
+  let { listid } = useParams();
+
   const [data, setData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -74,7 +58,7 @@ function VideoBox({ listid }) {
           <div>
             <Title>{data.title}</Title>
             <Info>
-              <p>{new Date("2021-01-03T14:23:15Z").toString()}</p>
+              <p>{new Date(data.publishedAt).toString()}</p>
               <br />
               <p>{data.description}</p>
             </Info>
@@ -85,4 +69,4 @@ function VideoBox({ listid }) {
   );
 }
 
-export default VideoBox;
+export default PlaylistBox;

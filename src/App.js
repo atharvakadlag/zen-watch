@@ -6,13 +6,12 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar.js";
-import SideBar from "./components/Navbar/SideBar.js";
-import Home from "./pages/Home.js";
-import Video from "./pages/Video.js";
-import Error404 from "./pages/Error404.js";
-import VideoBox from "./components/VideoBox/VideoBox.js";
-import Subject from "./pages/Subject";
+import Navbar from "./components/Navbar/Navbar";
+import SideBar from "./components/Navbar/SideBar";
+import Home from "./pages/Home";
+import Error404 from "./pages/Error404";
+import Playlist from "./pages/Playlist";
+import PlaylistBox from "./components/PlaylistBox/PlaylistBox";
 
 const App = () => {
   const [isOpen, setOpen] = useState(false);
@@ -21,8 +20,6 @@ const App = () => {
     setOpen(!isOpen);
   };
 
-  const sendQUery = (query) => {};
-
   return (
     <div className="container">
       <Router>
@@ -30,8 +27,8 @@ const App = () => {
         <Navbar toggle={toggle} />
         <Switch>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/video/:listid" exact component={Video}></Route>
-          <Route path="/subject/:name" exact component={Subject}></Route>
+          <Route path="/playlist" exact component={Playlist}></Route>
+          <Route path="/playlist/:listid" exact component={PlaylistBox}></Route>
           <Route path="/404" exact component={Error404}></Route>
         </Switch>
       </Router>
