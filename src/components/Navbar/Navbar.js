@@ -25,6 +25,7 @@ function Navbar({ toggle }) {
           >
             About Me
           </NavLink>
+          <NavLink to="/playlist">Playlist</NavLink>
         </NavMenu>
       </Nav>
     </div>
