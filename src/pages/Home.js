@@ -1,13 +1,16 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
-import { Container } from "./Elements";
 import logo from "../images/logo.svg";
+import rreln from "../images/rreln.jpg";
+import asmp from "../images/asmp.jpg";
+import sorting from "../images/sorting.jpg";
 
 // TODO create a proper home page
 const CardContainer = styled.div`
   margin: 2em 5em;
   display: flex;
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
     margin: 2em 2em;
@@ -47,23 +50,29 @@ function LinkCard({ to = "", title = "", img = { logo } }) {
 
 function Home() {
   return (
-    <CardContainer>
-      <LinkCard
-        to="/playlist/PL4R4pCdBwe_b-aPiD8OBx910hR2zUTNy9"
-        img={logo}
-        title="Asymptotic Analysis"
-      />
-      <LinkCard
-        to="/playlist/PL4R4pCdBwe_ZSSknwW68XT4rHA1Fff1zH"
-        img={logo}
-        title="Recurrence Relations"
-      />
-      <LinkCard
-        to="/playlist/PL4R4pCdBwe_YN1lnCAeMBcDsiZ3yi3gOc"
-        img={logo}
-        title="Sorting"
-      />
-    </CardContainer>
+    <div>
+      <CardContainer>
+        <LinkCard to="/playlist" img={logo} title="ZenWatch a Video" />
+        <LinkCard to="/video" img={logo} title="ZenWatch a playlist" />
+      </CardContainer>
+      <CardContainer>
+        <LinkCard
+          to="/playlist/PL4R4pCdBwe_b-aPiD8OBx910hR2zUTNy9"
+          img={asmp}
+          title="Asymptotic Analysis"
+        />
+        <LinkCard
+          to="/playlist/PL4R4pCdBwe_ZSSknwW68XT4rHA1Fff1zH"
+          img={rreln}
+          title="Recurrence Relations"
+        />
+        <LinkCard
+          to="/playlist/PL4R4pCdBwe_YN1lnCAeMBcDsiZ3yi3gOc"
+          img={sorting}
+          title="Sorting"
+        />
+      </CardContainer>
+    </div>
   );
 }
 

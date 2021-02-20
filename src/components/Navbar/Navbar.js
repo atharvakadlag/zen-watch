@@ -1,6 +1,7 @@
 import {
   Nav,
   NavLink,
+  NavBrand,
   Bars,
   NavMenu,
   NavBtn,
@@ -13,10 +14,10 @@ function Navbar({ toggle }) {
   return (
     <div>
       <Nav>
-        <NavLink to="/">
+        <NavBrand to="/">
           <Logo src={logo} alt="logo" />
-          <h1>ZenWatch</h1>
-        </NavLink>
+          <p>ZenWatch</p>
+        </NavBrand>
         <Bars onClick={toggle} />
         <NavMenu>
           <NavLink
@@ -25,7 +26,8 @@ function Navbar({ toggle }) {
           >
             About Me
           </NavLink>
-          <NavLink to="/playlist">Playlist</NavLink>
+          <NavLink to="/playlist">ZenWatch playlist</NavLink>
+          <NavLink to="/video">ZenWatch video</NavLink>
         </NavMenu>
       </Nav>
     </div>

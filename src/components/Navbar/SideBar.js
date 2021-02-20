@@ -23,7 +23,8 @@ const SideBar = ({ isOpen, toggle }) => {
           >
             About Me
           </SideBarLink>
-          <SideBarLink to="/playlist">Playlist</SideBarLink>
+          <SideBarLink to="/playlist">ZenWatch playlist</SideBarLink>
+          <SideBarLink to="/video">ZenWatch video</SideBarLink>
         </SideBarMenu>
       </Side>
     </Container>

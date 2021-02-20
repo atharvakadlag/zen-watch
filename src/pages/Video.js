@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Container, Form, Label, Text, Submit, Error } from "./Elements";
 
-function Playlist() {
+function Video() {
   const [playid, setPlayid] = useState("");
 
   const [link, setLink] = useState("");
@@ -19,13 +19,13 @@ function Playlist() {
       for (const str of args) {
         params[str.split("=")[0]] = str.split("=")[1];
       }
-      if ("list" in params) {
-        setPlayid(params["list"]);
+      if ("v" in params) {
+        setPlayid(params["v"]);
         setRedirect(true);
       } else {
-        if ("v" in params) {
+        if ("list" in params) {
           setError(
-            "Are you trying to play a video? If so, kindly switch to video tab."
+            "Are you trying to play a playlist? If so, kindly switch to playlist tab."
           );
         }
       }
@@ -35,7 +35,7 @@ function Playlist() {
   };
 
   if (redirect) {
-    return <Redirect to={`/playlist/${playid}`} />;
+    return <Redirect to={`/video/${playid}`} />;
   } else {
     return (
       <Container>
@@ -44,11 +44,11 @@ function Playlist() {
             type="text"
             name="link"
             id="linkid"
-            placeholder="Enter youtube playlist link to play"
+            placeholder="Enter youtube video link to play"
             value={link}
             onChange={(e) => setLink(e.target.value)}
           />
-          <Submit type="submit" value="Load Playlist" />
+          <Submit type="submit" value="Load Video" />
         </Form>
         <Error>{error}</Error>
       </Container>
@@ -56,4 +56,4 @@ function Playlist() {
   }
 }
 
-export default Playlist;
+export default Video;
