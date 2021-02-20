@@ -23,7 +23,7 @@ const SideBar = ({ isOpen, toggle }) => {
           >
             About Me
           </SideBarLink>
-          <SideBarLink to="/credits">Credits</SideBarLink>
+          <SideBarLink to="/playlist">Playlist</SideBarLink>
         </SideBarMenu>
       </Side>
     </Container>
