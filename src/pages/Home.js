@@ -11,6 +11,7 @@ const CardContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     margin: 2em 2em;
+    display: block;
   }
 `;
 
@@ -19,7 +20,7 @@ const Card = styled(NavLink)`
   display: block;
   color: black;
   transition: 0.3s;
-  margin: 0px 10px;
+  margin: 10px 10px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
