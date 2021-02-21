@@ -8,13 +8,11 @@ import sorting from "../images/sorting.jpg";
 
 // TODO create a proper home page
 const CardContainer = styled.div`
-  margin: 2em 5em;
   display: flex;
   justify-content: center;
 
   @media screen and (max-width: 768px) {
-    margin: 2em 2em;
-    display: block;
+    flex-direction: column;
   }
 `;
 
