@@ -13,6 +13,7 @@ const CardContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
