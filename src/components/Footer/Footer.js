@@ -31,13 +31,13 @@ function Footer() {
           <FaGithubAlt />
         </FooterLink>
         <FooterLink
-          to={{ pathname: "https://www.linedin.com/in/atharvakadlag" }}
+          to={{ pathname: "https://www.linkedin.com/in/atharvakadlag" }}
           target="_blank"
         >
           <FaLinkedin />
         </FooterLink>
         <FooterLink
-          to={{ pathname: "https://www.twitter.com/atharvakadlag" }}
+          to={{ pathname: "https://www.twitter.com/atharva_kadlag" }}
           target="_blank"
         >
           <FaTwitter />
