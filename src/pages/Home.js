@@ -18,12 +18,12 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled(NavLink)`
-  width: 300px;
+  width: 200px;
   display: block;
   color: black;
   transition: 0.3s;
   margin: 10px 10px;
-  padding: 10px;
+  padding: 5px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   text-align: center;
@@ -33,7 +33,9 @@ const CardThumbnail = styled.img`
   width: 100%;
   border-radius: 10px;
 `;
-const CardTitle = styled.h1`
+const CardTitle = styled.p`
+  font-size: 1.2em;
+  font-weight: 700;
   width: 100%;
   border-radius: 10px;
 `;

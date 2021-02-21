@@ -11,11 +11,10 @@ const Container = styled.div`
   position: sticky;
   bottom: 0;
   width: 100%;
-  height: 15vh;
 `;
 const Icons = styled.div``;
 const FooterLink = styled(Link)`
-  font-size: 3em;
+  font-size: 2em;
   color: #42aee9;
   margin: 0 0.3em;
 `;
