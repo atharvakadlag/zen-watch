@@ -12,6 +12,6 @@ body {
 
 .main-wrapper {
   box-sizing: border-box;
-  min-height: 100vh;
+  min-height: 85vh;
   position: relative;
 }
