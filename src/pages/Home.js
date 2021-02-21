@@ -51,8 +51,8 @@ function Home() {
   return (
     <div>
       <CardContainer>
-        <LinkCard to="/playlist" img={logo} title="ZenWatch a Video" />
-        <LinkCard to="/video" img={logo} title="ZenWatch a playlist" />
+        <LinkCard to="/playlist" img={logo} title="ZenWatch a Playlist" />
+        <LinkCard to="/video" img={logo} title="ZenWatch a Video" />
       </CardContainer>
       <CardContainer>
         <LinkCard
