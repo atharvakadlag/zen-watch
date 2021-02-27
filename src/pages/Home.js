@@ -50,6 +50,8 @@ function LinkCard({ to = "", title = "", img = { logo } }) {
 }
 
 function Home() {
+  document.title =
+    "Zen Watch - Watch youtube without overly exiting recommendations";
   return (
     <div>
       <CardContainer>

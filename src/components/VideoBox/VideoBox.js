@@ -13,11 +13,7 @@ import {
 
 // end
 const getAPI = (videoid) => {
-  return (
-    "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=" +
-    videoid +
-    "&key=AIzaSyBT20-8C1J3AdLYmuguyjXbYMVtSaSUAHI" // key
-  );
+  return `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoid}&key=${process.env.YOUTUBE_API_KEY}`;
 };
 
 function VideoBox() {
@@ -40,6 +36,10 @@ function VideoBox() {
         setLoading(false);
       });
   }, [videoid]);
+
+  if (!loading) {
+    document.title = "Zen Watch - " + data.title;
+  }
 
   return (
     <Container>
