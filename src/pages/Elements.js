@@ -10,10 +10,9 @@ export const Container = styled.div`
 export const Center = styled.div`
   display: flex;
   position: absolute;
-  margin-top: 10vh;
+  margin: 10vh;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 90vw;
   font-size: 2em;
   color: #42aee9;
   font-weight: 700;

@@ -75,30 +75,3 @@ export const NavMenu = styled.div`
     background-color: red;
   }
 `;
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
-  margin-right: 25px;
-  justify-content: flex-end;
-  width: 100vw;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #256ce1;
-  padding: 10px 20px;
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    color: #106066;
-    background-color: $fff;
-  }
-`;

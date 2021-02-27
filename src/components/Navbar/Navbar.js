@@ -20,12 +20,7 @@ function Navbar({ toggle }) {
         </NavBrand>
         <Bars onClick={toggle} />
         <NavMenu>
-          <NavLink
-            to={{ pathname: "https://atharvakadlag.github.io" }}
-            target="_blank"
-          >
-            About Me
-          </NavLink>
+          <NavLink to="/about">About Me</NavLink>
           <NavLink to="/playlist">ZenWatch playlist</NavLink>
           <NavLink to="/video">ZenWatch video</NavLink>
         </NavMenu>

@@ -23,6 +23,4 @@ export const Title = styled.h1`
   color: #42aee9;
   font-weight: 600;
 `;
-export const Info = styled.div`
-  font-style: italic;
-`;
+export const Info = styled.div``;
