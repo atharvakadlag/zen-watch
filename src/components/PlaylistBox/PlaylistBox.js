@@ -13,7 +13,7 @@ import {
 
 // end
 const getAPI = (listid) => {
-  return `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${listid}&key=${process.env.YOUTUBE_API_KEY}`;
+  return `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&id=${listid}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`;
 };
 
 function PlaylistBox() {
