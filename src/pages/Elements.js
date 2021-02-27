@@ -14,7 +14,7 @@ export const Center = styled.div`
   justify-content: center;
   width: 90vw;
   font-size: 2em;
-  color: #42aee9;
+  color: #fff;
   font-weight: 700;
 `;
 export const Form = styled.form``;
